@@ -14,7 +14,7 @@
 # api_key = os.getenv("GKEY")
 # if not api_key:
 #     # Hardcoded backup just in case
-#     api_key = "AIzaSyAKS2mPV9OludY136Kxezd189AP79cVnH0" 
+#     api_key = "" 
 
 # os.environ["GOOGLE_API_KEY"] = api_key
 # genai.configure(api_key=api_key)
