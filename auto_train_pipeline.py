@@ -180,8 +180,8 @@ env_path = Path(__file__).parent / ".env"
 load_dotenv(dotenv_path=env_path)
 
 api_key = os.getenv("GKEY")
-if not api_key:
-    api_key = "AIzaSyAKS2mPV9OludY136Kxezd189AP79cVnH0" 
+# if not api_key:
+#     api_key = "" 
 
 os.environ["GOOGLE_API_KEY"] = api_key
 genai.configure(api_key=api_key)
