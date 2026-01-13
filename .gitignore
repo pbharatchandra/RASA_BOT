@@ -1,0 +1,90 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Virtual environments
+venv/
+ENV/
+env/
+.venv/
+env.bak/
+venv.bak/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# RASA specific
+models/
+models/*
+.rasa/
+rasa.db
+events.db
+
+# Credentials and secrets
+credentials.yml
+endpoints.yml
+config.yml
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+*.csv
+
+# Logs
+logs/
+*.log
+
+# OS specific
+Thumbs.db
+.DS_Store
+*.exe
+
+# Testing
+.pytest_cache/
+htmlcov/
+.coverage
+.tox/
+
+# Temporary files
+*.tmp
+*.temp
+*~
+
+# Environment variables
+.env
+.env.local

@@ -1,0 +1,408 @@
+
+        :root {
+            --primary-color: #032d5d;
+            --secondary-color: #e67e22;
+            --accent-color: #3498db;
+            --light-bg: #f8f9fa;
+            --dark-bg: #343a40;
+            --text-color: #333;
+            --light-text: #f8f9fa;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f5f5f5;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+            .navbar-brand img {
+            height: 50px;
+        }
+
+        .header-container {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo {
+            max-height: 40px;
+            margin-right: 10px;
+        }
+        
+        
+        .login-container {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            padding: 25px;
+            margin-top: -30px;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .login-title {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .form-control {
+            padding: 12px 15px;
+            border-radius: 6px;
+            border: 1px solid #ddd;
+            margin-bottom: 15px;
+        }
+        
+        .btn-login {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 6px;
+            font-weight: 500;
+            width: 100%;
+            transition: all 0.3s;
+        }
+        
+        .btn-login:hover {
+            background-color: #021f3f;
+            transform: translateY(-2px);
+        }
+        
+        .password-toggle {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: #777;
+        }
+        
+        /* Notice Board Styles */
+        .notice-board {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+        
+        .notice-header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 20px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+        
+        .notice-header i {
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .notice-content {
+            padding: 20px;
+        }
+        
+        .notice-item {
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s;
+        }
+        
+        .notice-item:last-child {
+            border-bottom: none;
+        }
+        
+        .notice-item:hover {
+            background-color: #f9f9f9;
+            transform: translateX(5px);
+        }
+        
+        .notice-icon {
+            color: var(--secondary-color);
+            font-size: 1.2rem;
+            margin-right: 15px;
+            min-width: 25px;
+        }
+        
+        .notice-text {
+            flex: 1;
+        }
+        
+        .notice-title {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 3px;
+        }
+        
+        .notice-date {
+            font-size: 0.8rem;
+            color: #777;
+        }
+        
+        .notice-badge {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            margin-left: 10px;
+        }
+        
+        /* News Section */
+        .news-container {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .news-header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 20px;
+            font-weight: 600;
+        }
+        
+        .news-content {
+            padding: 15px;
+            height: 200px;
+            overflow-y: auto;
+        }
+        
+        .news-item {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .news-item:last-child {
+            border-bottom: none;
+        }
+        
+        /* Quick Links */
+        .quick-links {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            padding: 20px;
+            margin-bottom: 25px;
+        }
+        
+        .quick-links-title {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 15px;
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 8px;
+        }
+        
+        .quick-link {
+            display: block;
+            padding: 10px 0;
+            color: var(--text-color);
+            text-decoration: none;
+            transition: all 0.3s;
+            border-bottom: 1px dashed #eee;
+        }
+        
+        .quick-link:last-child {
+            border-bottom: none;
+        }
+        
+        .quick-link:hover {
+            color: var(--secondary-color);
+            transform: translateX(5px);
+        }
+        
+        .quick-link i {
+            margin-right: 10px;
+            color: var(--secondary-color);
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            margin-top: 30px;
+        }
+        
+        .footer a {
+            color: var(--secondary-color);
+            text-decoration: none;
+        }
+        /* Scrolling Notice Bar */
+        .scrolling-notice-bar {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 10px 0;
+            overflow: hidden;
+            white-space: nowrap;
+            position: relative;
+            margin-bottom: 20px;
+            border-radius: 4px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .scrolling-notice-content {
+            display: inline-block;
+            padding-left: 100%;
+            animation: scrollNotice 30s linear infinite;
+        }
+
+        .scrolling-notice-item {
+            display: inline-block;
+            padding: 0 20px;
+            font-weight: 500;
+            position: relative;
+        }
+
+        .scrolling-notice-item:after {
+            content: "•";
+            position: absolute;
+            right: -5px;
+            color: rgba(255,255,255,0.7);
+        }
+
+        .scrolling-notice-item:last-child:after {
+            display: none;
+        }
+
+        @keyframes scrollNotice {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100%); }
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 992px) {
+            .login-container {
+                margin-top: 20px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .institute-name {
+                font-size: 1.2rem;
+            }
+            
+            .logo {
+                max-height: 60px;
+            }
+        }
+        
+        /* Animation for notice board */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .notice-board {
+            animation: fadeIn 0.5s ease-out;
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: var(--secondary-color);
+            border-radius: 10px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: #d35400;
+        }
+
+        
+
+             
+    
+      
+        
+       
+        
+        .user-photo {
+            width: 75px;
+            height: 85px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #e0e6ed;
+            margin-right: 15px;
+        }
+        
+      
+        
+      
+        
+        .notice-author {
+            color: #b94e19;
+            font-weight: 600;
+            font-size: 13px;
+        }
+        
+       
+        
+        
+        
+      
+        
+        .more-info-btn {
+            background: #e67e22;
+            color: white;
+            border: none;
+            padding: 2px 5px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 2px;
+            font-size: 12px;
+            
+}
+        
+        .more-info-btn:hover {
+            background: #0e85d5;
+            transform: translateY(-2px);
+        }
+    .user-photo-container{
+        padding-right: 6px;
+    }
+        
+        @media (max-width: 768px) {
+            .more-info-btn {
+                margin-top: 10px;
+                font-size: 10px;
+                align-self: flex-end;
+            }
+
+           .notice-title{
+            font-size: 14px;
+           } 
+             .notice-author {
+            color: #b94e19;
+            font-weight: 500;
+            font-size: 11px;
+        }
+        }

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard - NIST Information System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { background-color: #f5f5f5; font-family: 'Poppins', sans-serif; }
+        .dashboard-container { 
+            max-width: 800px; 
+            margin-top: 50px; 
+            padding: 30px; 
+            background: white; 
+            border-radius: 10px; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .header { background-color: #032d5d; color: white; padding: 20px; border-radius: 8px 8px 0 0; margin: -30px -30px 30px -30px; }
+        .profile-card { border: 1px solid #ddd; border-radius: 8px; margin-bottom: 20px; }
+        .profile-card-header { background-color: #e67e22; color: white; padding: 10px 15px; font-weight: bold; border-radius: 8px 8px 0 0; }
+        .detail-item { padding: 10px 15px; border-bottom: 1px solid #eee; }
+        .detail-item:last-child { border-bottom: none; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="dashboard-container">
+            <div class="header text-center">
+                <h2><i class="fas fa-chart-line me-2"></i> User Dashboard</h2>
+                <p class="lead" id="greetingMessage">Loading...</p>
+            </div>
+            
+            <div class="profile-card">
+                <div class="profile-card-header">
+                    <i class="fas fa-user-circle me-2"></i> User Details
+                </div>
+                <div class="profile-card-body">
+                    <div class="detail-item">
+                        <strong>Full Name:</strong> <span id="userFullName"></span>
+                    </div>
+                    <div class="detail-item">
+                        <strong>Login ID / Roll No.:</strong> <span id="userLoginName"></span>
+                    </div>
+                    </div>
+            </div>
+
+            <div class="text-center mt-4">
+                <button class="btn btn-danger" onclick="logout()"><i class="fas fa-sign-out-alt me-2"></i> Logout</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function loadUserDetails() {
+            // Check if user is authenticated (prevents direct URL access)
+            const isAuthenticated = localStorage.getItem('isAuthenticated');
+            if (isAuthenticated !== 'true') {
+                alert('Access Denied. Please log in.');
+                window.location.href = "loginnew.html"; // Redirect back to login
+                return;
+            }
+
+            // Get saved data from Local Storage
+            const userName = localStorage.getItem('userName');
+            const userRollNumber = localStorage.getItem('userRollNumber');
+            
+            // Display data on the page
+            document.getElementById('greetingMessage').textContent = `Welcome, ${userName}!`;
+            document.getElementById('userFullName').textContent = userName || 'N/A';
+            document.getElementById('userLoginName').textContent = userRollNumber || 'N/A';
+        }
+
+        function logout() {
+            // Clear local storage and redirect
+            localStorage.clear();
+            alert('You have been logged out.');
+            window.location.href = "loginnew.html";
+        }
+
+        // Load details when the page opens
+        window.onload = loadUserDetails;
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

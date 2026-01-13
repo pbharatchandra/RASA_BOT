@@ -1,0 +1,41 @@
+-- 1. Create the function that checks the count
+CREATE OR REPLACE FUNCTION check_fallback_limit() RETURNS TRIGGER AS $$
+DECLARE
+    row_count INTEGER;
+BEGIN
+    -- Count rows in the table
+    SELECT COUNT(*) INTO row_count FROM fallback_logs;
+
+    -- If we hit the limit (5), send a signal!
+    IF row_count >= 5 THEN
+        PERFORM pg_notify('trigger_rasa', 'start_now');
+    END IF;
+    
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+-- 2. Attach this function to the table
+CREATE TRIGGER watch_for_limit
+AFTER INSERT ON fallback_logs
+FOR EACH ROW
+EXECUTE FUNCTION check_fallback_limit();
+
+--KISHAN UPDATE 19TH AUTO TRAIN----------
+
+CREATE OR REPLACE FUNCTION check_fallback_count() RETURNS TRIGGER AS $$
+DECLARE
+    untrained_count INTEGER;
+BEGIN
+    -- Count how many rows are NOT yet trained
+    SELECT COUNT(*) INTO untrained_count FROM fallback_logs WHERE is_trained = FALSE;
+
+    -- CHANGE IS HERE: Trigger when we hit 10 errors (instead of 100)
+    IF untrained_count >= 10 THEN
+        NOTIFY start_auto_train;
+    END IF;
+    
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+------------------------------------------------------------------------------------------
