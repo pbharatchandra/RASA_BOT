@@ -1,3 +1,4 @@
 FOR RASA TO RUN AS A BACKEND SERVICE (FOR FRONTEND)= rasa run --enable-api --cors "*"
 FOR ACTIVATING VIRTUAL ENVIRONMENT= .venv/Scripts/Activate
 FOR RUNNING RASA ACTIONS= rasa run actions
+FOR RASA TO RUN AS A BACKEND SERVICE WITH DEBUG (FOR FRONTEND)= rasa run --enable-api --cors "*" --debug
